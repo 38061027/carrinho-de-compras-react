@@ -1,0 +1,269 @@
+.container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #0f51b9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.title {
+  color: #fff;
+}
+
+.title::after {
+  content: "sistemas";
+  margin-left: 10px;
+  opacity: 0.3;
+  font-weight: 300;
+}
+
+.cart {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  width: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.cart .qtd {
+  align-self: center;
+}
+
+.content-itens {
+  width: 100%;
+  height: 100vh;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.content-itens .list-itens {
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.itens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 340px;
+  position: relative;
+}
+
+.coast-item {
+  width: 100px;
+}
+
+.img {
+  width: 150px;
+}
+
+.box-one {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  justify-content: space-between;
+  align-items: center;
+  height: 40%;
+}
+
+.box-one .coast-item {
+  background-color: #373737;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+}
+.box-one .name-itens {
+  flex-wrap: wrap;
+}
+
+.box-two {
+  padding: 0 15px;
+}
+
+.btn-buy {
+  width: 100%;
+  height: 1.5rem;
+  background-color: #0f51b9;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #fff;
+  border: transparent;
+  height: 20;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #eeeeee;
+  margin-top: 60px;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cart */
+
+.content-cart {
+  display: none;
+}
+
+.open {
+  display: block;
+  height: 100vh;
+  width: 30%;
+  right: 0;
+
+  position: absolute;
+  background-color: #0f51b9;
+  z-index: 1;
+}
+
+.qtd-product {
+  padding: 5px;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  width: 70px;
+  align-items: center;
+  justify-content: space-between;
+  border: transparent;
+  border-radius: 10px;
+}
+
+.quantity .quantity-btn {
+  border: transparent;
+  padding: 5px;
+  border: 5px;
+  cursor: pointer;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+}
+
+.title-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 15%;
+  color: #fff;
+}
+.title-cart p {
+  background-color: #000000;
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.products {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.products .products-ind {
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+#close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #000000;
+  border-radius: 50%;
+  padding: 2px;
+  color: #fff;
+  font-size: small;
+  cursor: pointer;
+}
+.products .products-ind .products-add {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+.product-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 50%;
+}
+
+.img-detail {
+  max-height: 100%;
+  max-width: 50px;
+}
+
+.box-total {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  color: #fff;
+}
+.box-total .amount {
+  height: 50px;
+}
+
+.box-total .finish-buy-btn {
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  background-color: #000000;
+  border: transparent;
+  cursor: pointer;
+}
