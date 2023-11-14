@@ -9,17 +9,7 @@ import $ from 'jquery';
 
 function Home() {
 
-  (function (doc) {
 
-
-
-    if (doc.readyState === 'complete') {
-
-      $('.skeleton').removeClass('skeleton');
-
-    }
-
-  })(document);
 
   const [isPageLoaded, setIsPageLoaded] = useState(false);
 
@@ -98,6 +88,17 @@ function Home() {
       })
 
   }, []);
+
+
+  (function (doc) {
+
+    if (doc.readyState === 'complete') {
+
+      $('.skeleton').removeClass('skeleton');
+
+    }
+
+  })(document);
 
   return (
     <main className='container'>
