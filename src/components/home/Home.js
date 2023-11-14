@@ -12,7 +12,6 @@ function Home() {
 
 
   const [isPageLoaded, setIsPageLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const [carrinho, setCarrinho] = useState([]);
   const [total, setTotal] = useState(0);
@@ -75,7 +74,6 @@ function Home() {
 
 
   const [products, setProducts] = useState([]);
-  
 
   useEffect(() => {
     const url = 'https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=10&sortBy=id&orderBy=DESC';
@@ -88,28 +86,19 @@ function Home() {
           setIsPageLoaded(true);
         }
       })
-      .finally(() => {
-        setIsLoading(true);
-        removeSkeletonClass();
-      });
+
   }, []);
 
-  const removeSkeletonClass = () => {
-    const skeletonElements = document.querySelectorAll('.skeleton');
-    skeletonElements.forEach(element => {
-      element.classList.remove('skeleton');
-    });
-  };
 
-  // (function (doc) {
+  (function (doc) {
 
-  //   if (doc.readyState === 'complete') {
+    if (doc.readyState === 'complete') {
 
-  //     $('.skeleton').removeClass('skeleton');
+      $('.skeleton').removeClass('skeleton');
 
-  //   }
+    }
 
-  // })(document);
+  })(document);
 
   return (
     <main className='container'>
