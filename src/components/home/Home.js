@@ -92,7 +92,7 @@ function Home() {
 
   (function (doc) {
 
-    if (doc.readyState === 'complete') {
+    if (doc.readyState === 'complete' ) {
 
       $('.skeleton').removeClass('skeleton');
 
@@ -195,11 +195,11 @@ function Home() {
           ))}
         </ul>
       </section>
-
+      {isPageLoaded && (
         <footer className='footer'>
           <p>MKS sistemas &copy; todos os direitos reservados</p>
         </footer>
-
+      )}
     </main>
   );
 }
