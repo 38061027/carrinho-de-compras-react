@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import './Loader.css';
+import $ from 'jquery';
+
 
 
 
 
 function Home() {
+
+  (function (doc) {
+
+
+
+    if (doc.readyState === 'complete') {
+
+      $('.skeleton').removeClass('skeleton');
+
+    }
+
+  })(document);
+
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
 
   const [carrinho, setCarrinho] = useState([]);
   const [total, setTotal] = useState(0);
@@ -76,6 +93,7 @@ function Home() {
       .then(data => {
         if (data.products && Array.isArray(data.products)) {
           setProducts(data.products);
+          setIsPageLoaded(true);
         }
       })
 
@@ -148,15 +166,24 @@ function Home() {
       <section className='content-itens'>
         <ul className='list-itens'>
           {products.map((product, index) => (
-            <li key={index} className='itens'>
-              <img className='img' src={product.photo} alt={product.name} title={product.name} />
-              <div>
+            <li key={index} className='itens' >
+              <div className='img-ske skeleton'>
+                <img className='img' src={product.photo} alt={product.name} title={product.name} />
+              </div>
+
+              <div className='content-box'>
                 <div className='box-one'>
-                  <h3 className='name-item'>{product.name}</h3>
-                  <p className='coast-item'>{product.price} R$</p>
+                  <div className='skeleton'>
+
+                    <h3 className='name-item'>{product.name}</h3>
+                  </div>
+                  <div className='skeleton'>
+
+                    <p className='coast-item'>{product.price} R$</p>
+                  </div>
 
                 </div>
-                <div className='box-two'>
+                <div className='box-two skeleton'>
                   <p className='description'>{product.description}</p>
                 </div>
                 <button className='btn-buy' onClick={() => adicionarAoCarrinho(product)}>
@@ -166,10 +193,12 @@ function Home() {
             </li>
           ))}
         </ul>
+      </section>
+      {isPageLoaded && (
         <footer className='footer'>
           <p>MKS sistemas &copy; todos os direitos reservados</p>
         </footer>
-      </section>
+      )}
     </main>
   );
 }
