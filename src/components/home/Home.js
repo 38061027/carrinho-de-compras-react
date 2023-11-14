@@ -92,7 +92,7 @@ function Home() {
 
   (function (doc) {
 
-    if (doc.readyState === 'complete') {
+    if (doc.readyState === 'complete' || setIsPageLoaded === true) {
 
       $('.skeleton').removeClass('skeleton');
 
